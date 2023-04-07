@@ -1,0 +1,45 @@
+<div class="row mb-3">
+    <div class="col">
+      <button mat-icon-button (click)="prev()">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+    </div>
+    <div class="col">
+      <h3>{{ viewDate | date: 'MMMM y' }}</h3>
+    </div>
+    <div class="col">
+      <button mat-icon-button (click)="next()">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+    </div>
+  </div>
+  
+  <div class="cal-header">
+    <div class="cal-prev">
+      <button mat-icon-button (click)="viewDate.setMonth(viewDate.getMonth() - 1)">
+  <mat-icon>keyboard_arrow_left</mat-icon>
+</button>
+
+    </div>
+    <h3>{{ viewDate | date: 'MMMM y' }}</h3>
+    <div class="cal-next">
+        <button mat-icon-button (click)="viewDate.setMonth(viewDate.getMonth() + 1)">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </button>
+          
+    </div>
+  </div>
+  
+
+  <mwl-calendar-month-view
+    *ngIf="view === 'month'"
+    [viewDate]="viewDate"
+    [events]="events"
+    (eventClicked)="handleEvent('Clicked', $event.event)"
+    (eventTimesChanged)="handleEvent('Dropped or resized', $event.event)"
+    draggable
+    resizable
+    tooltipPlacement="top"
+  >
+  </mwl-calendar-month-view>
+  

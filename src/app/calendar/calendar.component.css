@@ -1,0 +1,19 @@
+.calendar-container {
+    height: 500px;
+  }
+  
+  .calendar-event-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .calendar-event-title {
+    font-weight: bold;
+  }
+  
+  .calendar-event-start-time,
+  .calendar-event-end-time {
+    font-size: 0.8rem;
+  }
+  
